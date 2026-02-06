@@ -21,7 +21,7 @@ export const UniformDeployedPreviewBanner = () => {
   }, []);
 
   return isVisible ? (
-    <div className="deployed-preview-banner">
+    <div className="w-full py-2 px-2 flex justify-center items-center gap-1.5 bg-neutral-800 text-white">
       <p>This preview is powered by a pre-deployed site. Click {' '}
         <Link
           data-is-rendered-by-uniform

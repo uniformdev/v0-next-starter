@@ -14,7 +14,7 @@ type HeroProps = ComponentProps<{
 const Hero: React.FC<HeroProps> = () => (
   <div>
     <UniformText
-      className="title"
+      className="m-0 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-center text-neutral-900 [&>a]:text-neutral-700 [&>a]:no-underline hover:[&>a]:underline"
       parameterId="title"
       as="h1"
       data-test-id="hero-title"
@@ -22,7 +22,7 @@ const Hero: React.FC<HeroProps> = () => (
     />
     <UniformRichText
       parameterId="description"
-      className="description"
+      className="my-4 text-xl sm:text-2xl leading-normal text-center"
       placeholder="Hero description goes here"
       data-test-id="hero-description"
     />

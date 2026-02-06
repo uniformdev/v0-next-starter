@@ -28,7 +28,7 @@ class MyDocument extends Document<CustomDocumentProps> {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
-          <main className="main">
+          <main className="min-h-[20vh] py-8 flex-1 flex flex-col justify-center items-center">
             <Main />
           </main>
           <NextScript />

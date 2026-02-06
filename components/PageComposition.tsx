@@ -1,22 +1,21 @@
-import React from "react";
 import Head from "next/head";
 import { RootComponentInstance } from "@uniformdev/canvas";
 import { UniformComposition } from "@uniformdev/canvas-react";
-import Navigation, { NavLink } from "./Navigation";
+import Navigation from "./Navigation";
 import Footer from "./Footer";
 import { UniformDeployedPreviewBanner } from "@/components/UniformDeployedPreviewBanner";
 import { useSetViewportQuirk } from "@/hooks/useSetViewportQuirk";
 
 export interface PageCompositionProps {
   data: RootComponentInstance;
-  navLinks: Array<NavLink>;
 }
 
+const navigation = [{ title: "Home", url: "/" }, { title: "About", url: "/about" }];
+
 export default function PageComposition({
-  data: composition,
-  navLinks,
+  data,
 }: PageCompositionProps) {
-  const { metaTitle } = composition?.parameters || {};
+  const { metaTitle } = data?.parameters || {};
   // set initial viewport quirk
   useSetViewportQuirk();
   return (
@@ -25,9 +24,9 @@ export default function PageComposition({
         <title>{metaTitle?.value as string}</title>
       </Head>
       <UniformDeployedPreviewBanner />
-      <main className="main">
-        <Navigation navLinks={navLinks} />
-        <UniformComposition data={composition} />
+      <main className="min-h-[20vh] py-8 flex-1 flex flex-col justify-center items-center">
+        <Navigation navLinks={navigation} />
+        <UniformComposition data={data} />
         <Footer />
       </main>
     </>
