@@ -7,9 +7,7 @@ import {
 type PageProps = ComponentProps;
 
 const Page: React.FC<PageProps> = () => (
-  <div>
-    <UniformSlot name="content" />
-  </div>
+  <UniformSlot name="content" />
 );
 
 registerUniformComponent({
